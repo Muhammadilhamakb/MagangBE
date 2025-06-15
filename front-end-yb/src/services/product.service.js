@@ -21,14 +21,13 @@ export const uploadImage = async (file) => {
   formData.append('image', file);
 
   try {
-    const res = await axios.post(`${API_URL}/upload`, formData); // ⬅️ ini dia!
+    const res = await axios.post(`${API_URL}/upload`, formData); // <== PENTING HARUS /upload
     return res.data.imageUrl;
   } catch (error) {
     console.error("❌ Upload gagal:", error.message);
     throw error;
   }
 };
-
 
 
 export const saveProduct = async (product) => {
